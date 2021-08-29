@@ -46,8 +46,8 @@ async def unsubscribe(message: types.Message):
 async def scheduled(wait_for):
 	while True:
 		await asyncio.sleep(wait_for)
-		gc = gspread.service_account(filename='fluid-gamma-319906-a4ea6dcfcfee.json')
-		url = 'https://docs.google.com/spreadsheets/d/1aRAa35d9nYyksSFd-NmqBZlnAFFYt08K3M-wRvFPsbo/'
+		gc = gspread.service_account(filename='') # token
+		url = '' # google sheets
 		sh = gc.open_by_url(url)
 		# выбрать лист таблицы
 		worksheet = sh.get_worksheet(2)
